@@ -399,7 +399,7 @@ if (auth.startsWith("NTLM ")) {
                     <option value="Altre equipament" tipDetall="Altres">Altre equipament</option>
                 </select>
 
-              <tr>
+            <tr>
               <td colspan=8 class="texto">
                 <div id=Detalltipus1 style="display: none">
                     <table cellpadding="0" cellspacing="0" border="0">
@@ -416,66 +416,67 @@ if (auth.startsWith("NTLM ")) {
                     </table>
                 </div>
                 </td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td colspan=8 class="texto">
-					<div id=DetallTrasllat style="display: none">
-							<table cellpadding="0" cellspacing="0" border="0">
-                                                        <tr>
-                                                        <td>
-                                                        <b>Número de llocs de treball&nbsp<b><br>
-                                                        </b></b></td>
-                                                        <td>
-                                                        <b>Número de impresores&nbsp<b><br>
-							</b></b></td>
-							</tr>
-							<tr>
-							<td>
-						        <input type="hidden" class=texto maxlength=3 name="Nlloc" size=3 value="">
-                                                   	<input class=texto maxlength=3 name="Nlloc2"  onchange="control(this.form)" size=3>
-                                                   	</td>
-							<td>
-                                                        <input type="hidden" class=texto maxlength=3 name="Nimp" size=3 value="">
-                                                        <input class=texto maxlength=3 name="Nimp2" size=3 onchange="control(this.form)"> </input>
-                                                        </td>
-                                                        </tr>
-                                                        </table>
-                  			</div>
-                  			
+                    <div id=DetallTrasllat style="display: none">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td>
+                                <b>Número de llocs de treball&nbsp<b><br>
+                                </b></b>
+                            </td>
+                            <td>
+                                <b>Número de impresores&nbsp<b><br>
+                                </b></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="hidden" class=texto maxlength=3 name="Nlloc" size=3 value="">
+                                <input class=texto maxlength=3 name="Nlloc2"  onchange="control(this.form)" size=3>
+                            </td>
+                            <td>
+                                <input type="hidden" class=texto maxlength=3 name="Nimp" size=3 value="">
+                                <input class=texto maxlength=3 name="Nimp2" size=3 onchange="control(this.form)"> </input>
+                            </td>
+                        </tr>
+                        </table>
+                    </div>
                 </td>
-              </tr>
+            </tr>
                 <td colspan=8  class="texto">
-					<div id=DetallAltres style="display: none">
-					<b>*Descripció<b><br>
-                                        <textarea name="Altres" rows="6" cols="50" value=""></textarea>
-					 </b></b></div>
-                <br>
+                    <div id=DetallAltres style="display: none">
+                        <b>*Descripció<b><br>
+                        <textarea name="Altres" rows="6" cols="50" value=""></textarea>
+                        </b></b>
+                    </div>
+                    <br>
                 </td>
-              </b></b></td></tr>
+                </b></b></td></tr>
 
-              <tr>
+            <tr>
                 <td colspan=8  class="texto">
-
-					<div id=DetallObservacions style="display: none">
-					<b>Observacions<b><br>
-                                        <textarea name="Observacions" rows="6" cols="50" value=""></textarea>
-					 </b></b></div>
+                    <div id=DetallObservacions style="display: none">
+                        <b>Observacions<b><br>
+                        <textarea name="Observacions" rows="6" cols="50" value=""></textarea>
+                        </b></b>
+                    </div>
                 </td>
-              </tr>
-              
-              <tr>
+            </tr>
+            <tr>
                 <td colspan=8  class="texto">
-
-					<div id=DetallMotiuSubstitucio style="display: none">
-					<b>Motiu de la Substitució<b><br>
-                                        <textarea name="MotiuSubstitucio" rows="6" cols="50" value=""></textarea>
-					 </b></b></div>
+                    <div id=DetallMotiuSubstitucio style="display: none">
+                        <b>Motiu de la Substitució<b><br>
+                        <textarea name="MotiuSubstitucio" rows="6" cols="50" value=""></textarea>
+                         </b></b>
+                    </div>
                 </td>
-              </tr>
+            </tr>
 
-              <tr>
+            <tr>
                 <td colspan=8 class="texto">
-					<div id=DetallUbicacio style="display: none">
+                    <div id=DetallUbicacio style="display: none">
 				            <table cellpadding="0" cellspacing="0" border="0">
               					<tr>
               						<td class="texto">
@@ -512,51 +513,51 @@ if (auth.startsWith("NTLM ")) {
 
               					</tr>
 				            </table>
-					</div>
-					<div id=DetallDesti style="display: none">
-				            <table cellpadding="0" cellspacing="0" border="0">
-              					<tr>
-              						<td class="texto">
-							<b>Edifici desti<b><br>
-                                                        <input type="hidden"  class=texto maxlength=3 name="EdificiDest" size=3 value="">
-							<select name="EdificiDest2" onchange="control(this.form)" class="texto">
-							<option value=""></option>
-							<option value="Altres...">Altres...</option>
-							<option value="Balmes">Balmes</option>
-							<option value="Can Serra">Can Serra</option>
-							<option value="Casa Caritat">Casa Caritat</option>
-							<option value="Corsega">Corsega</option>
-							<option value="Diagonal">Diagonal</option>
-							<option value="Edifici del Rellotge">Edifici del Rellotge</option>
-							<option value="Londres">Londres</option>
-							<option value="Mallorca">Mallorca</option>
-							<option value="Martí­Julià">Martí­ Julià </option>
-							<option value="Medi Ambient (Laboratori)">Medi Ambient (Laboratori)</option>
-							<option value="Minerva">Minerva</option>
-							<option value="Nova Seu">Nova Seu</option>
-							<option value="Recinte Llars Mundet">Recinte Llars Mundet</option>
-							<option value="Recinte Maternitat">Recinte Maternitat</option>
-							<option value="Recinte Torribera">Recinte Torribera</option>
-							<option value="Sant Honorat">Sant Honorat</option>
-							<option value="Sant Pere més baix">Sant Pere més baix</option>
-							<option value="Vagó">Vagò</option>
-							</select>
-							</b></b></td>
-							<td class="texto">
-							<b>Planta<b><br>
-                                                        <input type="hidden" class=texto maxlength=3 name="PlantaDest" size=3 value="">
-							<input class=texto maxlength=5 name="PlantaDest2" onchange="control(this.form)" size=5>
-							</b></b></td>
-
-              					</tr>
-				            </table>
-					</div>
-
-					<p>
-
-					<input type="submit" value="<%= bean.findLabel("SP_Submit") %> &raquo;" onclick="this.disabled=true;this.value='Enviant dades, espereu si us plau...';this.form.submit();">
-                </p></td>
-                </tr>
+                    </div>
+                    <div id=DetallDesti style="display: none">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td class="texto">
+                                    <b>Edifici desti<b><br>
+                                    <input type="hidden"  class=texto maxlength=3 name="EdificiDest" size=3 value="">
+                                    <select name="EdificiDest2" onchange="control(this.form)" class="texto">
+                                        <option value=""></option>
+                                        <option value="Altres...">Altres...</option>
+                                        <option value="Balmes">Balmes</option>
+                                        <option value="Can Serra">Can Serra</option>
+                                        <option value="Casa Caritat">Casa Caritat</option>
+                                        <option value="Corsega">Corsega</option>
+                                        <option value="Diagonal">Diagonal</option>
+                                        <option value="Edifici del Rellotge">Edifici del Rellotge</option>
+                                        <option value="Londres">Londres</option>
+                                        <option value="Mallorca">Mallorca</option>
+                                        <option value="Martí­Julià">Martí­ Julià </option>
+                                        <option value="Medi Ambient (Laboratori)">Medi Ambient (Laboratori)</option>
+                                        <option value="Minerva">Minerva</option>
+                                        <option value="Nova Seu">Nova Seu</option>
+                                        <option value="Recinte Llars Mundet">Recinte Llars Mundet</option>
+                                        <option value="Recinte Maternitat">Recinte Maternitat</option>
+                                        <option value="Recinte Torribera">Recinte Torribera</option>
+                                        <option value="Sant Honorat">Sant Honorat</option>
+                                        <option value="Sant Pere més baix">Sant Pere més baix</option>
+                                        <option value="Vagó">Vagò</option>
+                                    </select>
+                                    </b></b>
+                                </td>
+                                <td class="texto">
+                                    <b>Planta<b><br>
+                                    <input type="hidden" class=texto maxlength=3 name="PlantaDest" size=3 value="">
+                                    <input class=texto maxlength=5 name="PlantaDest2" onchange="control(this.form)" size=5>
+                                    </b></b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                        <p>
+                        <input type="submit" value="<%= bean.findLabel("SP_Submit") %> &raquo;" onclick="this.disabled=true;this.value='Enviant dades, espereu si us plau...';this.form.submit();">
+                        </p>
+                </td>
+            </tr>
                 <td class="texto">
 					<div id=DetallGrup style="display: none">
 							<b>Grup<b><br>
@@ -967,7 +968,7 @@ e.printStackTrace();
         //Fin Asignación
 
 
-
+        //Classificació
         String clasificacion = "";
         String tipopeticion = request.getParameter("peticio");
         String tipopeticion2 = request.getParameter("tipus1");
@@ -976,175 +977,101 @@ e.printStackTrace();
         SortCode.sortIObject(clasifica);
         String textoclasi = "";
         String textosolu = "";
+        
+        IClassificationSerWhere claWhere = cla_hm.createClassificationSerWhere();
+        //XDG Subclassificació en cas PC, Portatil, Tablet (Nou o Stock)
+        String subClassificacio="Nou";
+        if("Retirada equip actual".equals(tipopeticion2)){
+            subClassificacio="Stock";
+        }
+        
+        
         for (int i=0 ; i<clasifica.length ; i++) {
            textoclasi = clasifica[i].getText();
-
-
-           if (tipopeticion.equals("Altre equipament")) {
-              if (textoclasi.equals("Altres_HW")) {
-                 sc.setClassification(clasifica[i]);
-              }
-           }
-           if (tipopeticion2.equals("Trasllat")) {
-              if (textoclasi.equals("Trasllat")) {
-                 sc.setClassification(clasifica[i]);
-              }
-           }
-           if (tipopeticion.equals("Ordinador sobretaula")) {
-              if (textoclasi.equals("PC Ofimàtic")) {
-                 sc.setClassification(clasifica[i]);
-
-              }
-           }
-           if (tipopeticion.equals("Ordinador portàtil")) {
-              if (textoclasi.equals("Portàtil")) {
-                 sc.setClassification(clasifica[i]);
-              }
-           }
-           if (tipopeticion.equals("Impressora")) {
-              if (textoclasi.equals("impressora")) {
-                 sc.setClassification(clasifica[i]);
-              }
-           }
-		   if (tipopeticion.equals("Tablet")) {
-              if (textoclasi.equals("Tablet")) {
-                 sc.setClassification(clasifica[i]);
-              }
-           }
+            if (tipopeticion.equals("Altre equipament")) {
+               if (textoclasi.equals("Altres_HW")) {
+                  sc.setClassification(clasifica[i]);
+               }
+            }
+            if (tipopeticion2.equals("Trasllat")) {
+               if (textoclasi.equals("Trasllat")) {
+                  sc.setClassification(clasifica[i]);
+               }
+            }
+            if (tipopeticion.equals("Ordinador sobretaula")) {
+                if (textoclasi.equals(subClassificacio)) {
+                    String parent=clasifica[i].getParentCode().getText();
+                    if ("PC Ofimàtic".equals(parent)){
+                        sc.setClassification(clasifica[i]);
+                    }
+                }
+            }
+            if (tipopeticion.equals("Ordinador portàtil")) {
+                if (textoclasi.equals(subClassificacio)) {
+                    String parent=clasifica[i].getParentCode().getText();
+                    if ("Portàtil".equals(parent)){
+                        sc.setClassification(clasifica[i]);
+                    }
+                }
+            }
+            if (tipopeticion.equals("Impressora")) {
+               if (textoclasi.equals("impressora")) {
+                  sc.setClassification(clasifica[i]);
+               }
+            }
+            if (tipopeticion.equals("Tablet")) {
+                if (textoclasi.equals(subClassificacio)) {
+                    String parent=clasifica[i].getParentCode().getText();
+                    if ("Tablet".equals(parent)){
+                        sc.setClassification(clasifica[i]);
+                    }
+                }
+            }
+        }
+        //XDG Revisa errors de  camps buits
+        String errores = "no";
+        //XDG no hi ha destinatari
+        if ("".equals(_destinataripeti)) {
+            errores = "si";
+            %>
+            <script language = "JavaScript" type="text/javascript">
+                alert('Destinatari de la petició està buit');
+            </script>
+            <%
+        }
+        //XDG no hi ha equipament
+        if ("".equals(tipopeticion)) {
+            errores = "si";
+            %>
+            <script language = "JavaScript" type="text/javascript">
+                alert('Tipus de equipament és obligatori');
+            </script>
+            <%
+        }
+        //XDG no hi ha tipus actuació en equipament diferent a Altre equipament
+        if ((!"Altre equipament".equals(tipopeticion))&&("".equals(tipopeticion2))){
+            errores = "si";
+            %>
+            <script language = "JavaScript" type="text/javascript">
+                alert('Tipus actuació és obligatori');
+            </script>
+            <%
+        } 
+        //XDG no hi ha observacions en Altre equipament
+        if (("Altre equipament".equals(tipopeticion))&&(_altres.equals(""))){
+            errores = "si";
+            %>
+            <script language = "JavaScript" type="text/javascript">
+                alert('Descripció està buit');;
+            </script>
+            <%
         }
 
-	String errores = "no";
-       String serveinom = "PROVISIÓ-HW";
-       if (tipopeticion.equals("")) {
-          errores = "si";
-          %>
-            <script language = "JavaScript" type="text/javascript">
-              alert('Tipus de equipament és obligatori');
-            </script>
-          <%
-          if (_destinataripeti.equals("")) {
-             errores = "si";
-             %>
-               <script language = "JavaScript" type="text/javascript">
-                 alert('Destinatari de la petició està buit');
-               </script>
-             <%
-          }
-
-       } else {
-          if (tipopeticion.equals("Ordinador sobretaula")) {
-             serveinom = "PROVISIÓ-HW";
-             if (tipopeticion2.equals("")){
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Tipus actuació és obligatori');
-                  </script>
-                <%
-             } else {
-                errores = "no";
-             }
-             			 
-			 
-             if (_destinataripeti.equals("")) {
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Destinatari de la petició està buit');
-                  </script>
-                <%
-             }
-          }
-          if (tipopeticion.equals("Ordinador portàtil")) {
-             serveinom = "PROVISIÓ-HW";
-             if (tipopeticion2.equals("")){
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Tipus actuació és obligatori');
-                  </script>
-                <%
-             } else {
-                errores = "no";
-             }
-
-
-             if (_destinataripeti.equals("")) {
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Destinatari de la petició està buit');
-                  </script>
-                <%
-             }
-          }
-          if (tipopeticion.equals("Impressora")) {
-             serveinom = "IMPRESSIO";
-             if (tipopeticion2.equals("")){
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Tipus actuació és obligatori');
-                  </script>
-                <%
-             } else {
-                errores = "no";
-             }
-
-             if (_destinataripeti.equals("")) {
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Destinatari de la petició està buit');
-                  </script>
-                <%
-             }
-          }
-		  
-		  if (tipopeticion.equals("Tablet")) {
-             serveinom = "PROVISIÓ-HW";
-             if (tipopeticion2.equals("")){
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Tipus actuació és obligatori');
-                  </script>
-                <%
-             } else {
-                errores = "no";
-             }
-             if (_destinataripeti.equals("")) {
-                errores = "si";
-                %>
-                  <script language = "JavaScript" type="text/javascript">
-                    alert('Destinatari de la petició està buit');
-                  </script>
-                <%
-             }
-          }
-		  
-       }
-       if (tipopeticion.equals("Altre equipament")) {
-          serveinom = "PROVISIÓ-HW";
-          errores = "no";
-          if (_destinataripeti.equals("")) {
-             errores = "si";
-             %>
-               <script language = "JavaScript" type="text/javascript">
-                alert('Destinatari de la petició està buit');
-               </script>
-             <%
-          }
-
-          if (_altres.equals("")) {
-              errores = "si";
-             %>
-               <script language = "JavaScript" type="text/javascript">
-                alert('Descripció està buit');
-               </script>
-             <%
-          }
-       }
+        //XDG fixa el servei "PROVISIÓ-HW" per a tot l'equipament excepte impressora
+        String serveinom = "PROVISIÓ-HW";
+        if ("Impressora".equals(tipopeticion)) {
+            serveinom = "IMPRESSIO";
+        }
 
 // XDG comprovació de tipus de equipament i tipus d'actuació
         //Tipus d'equipament
@@ -1161,7 +1088,7 @@ e.printStackTrace();
         String tipusPeticio="";
         if ("Retirada equip actual".equals(tipopeticion2)){
             tipusPeticio="Retirada ";
-        }else if("Nou equip".equals(tipopeticion2)||"Substitució equip actual".equals(tipopeticion2)){
+        }else {
             tipusPeticio="Instal·lació ";
         }
 
@@ -1172,106 +1099,103 @@ e.printStackTrace();
                 description = description + " - " + tipusEquipament;
             } else {
                 description = description + " - " + tipusPeticio + tipusEquipament;
-                //info = info + "\r\n" + "\r\n" + "A OMPLIR PEL TÈCNIC INSTAL·LADOR" + "\r\n" + "\r\n" + "Dades de l'equip instal·lat" + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............." + "\r\n\t" + "Data (dd/mm/aa)...."  + "\r\n" + "\r\n" + "Dades de l'equip retirat (si n'hi ha)"  + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............" + "\r\n" + "\r\n" + "(Un cop feta la instal·lació i consignades les dades, REASSIGNAR" + "\r\n" + "l'entrada de servei a SUPORT USUARI deixant \"A persona\" buit)";
                 info = info + "\r\n" + "\r\n" + "A OMPLIR PEL TÈCNIC INSTAL·LADOR" + "\r\n" + "\r\n" + "Dades de l'equip instal·lat" + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............." + "\r\n\t" + "Data (dd/mm/aa)...."  + "\r\n" + "\r\n" + "(Un cop feta la instal·lació i consignades les dades, REASSIGNAR" + "\r\n" + "l'entrada de servei a SUPORT USUARI deixant \"A persona\" buit)";
             }
             if (description != null) {
                 sc.setDescription(description);
             }
             sc.setInformation(info);
-        }			
-      
-        try {
-            sc.save();
-            //XDG
-            Thread.sleep(1000);
-            String loginname = "system";
-            String password = "servicedesk";
-                        //String servidor = "swcs574";
-            String servidor = "servicedesk";
-            SdClientBean bean2 = null;
-            try {
-               bean2 = new SdClientBean(servidor, loginname, password);
-            } catch (Throwable exc) {
-               bean2 = null;
-            }
-            IServicecall item = null;
-            IServicecallHome scHome = bean2.sd_session().getServicecallHome();
-            item = scHome.openServicecall(sc_oid);
-			 
-            //XDG Tipus de formulari en historial
-            String asuntolinea = "Formulari";
-            String infoh="Formulari Tècnics Equipament2";	
-            IHistoryLineServicecallHome his_hm = bean2.sd_session().getHistoryLineServicecallHome();
-            IHistoryLineServicecall lineasc = his_hm.openNewHistoryLineServicecall();
-            lineasc.setSubject(asuntolinea);
-            lineasc.setInformation(infoh);
-            item.addHistoryLine(lineasc);
-			 
-            IMediumHome me_hm = bean2.sd_session().getMediumHome();
-            IMedium medis[] = me_hm.findAllMedium();
-            IServiceHome ser_hm = bean2.sd_session().getServiceHome();
-            IServiceWhere serWhere = ser_hm.createServiceWhere();
-            IImpactHome imp2_hm = bean2.sd_session().getImpactHome();
-            IImpact impacts2[] = imp2_hm.findAllImpact();
-            //String serveinom = "PROVISIÓ-HW";
-            String textomedi = "";
-            String textoimpacte = "";
-            for (int i=0 ; i<medis.length ; i++) {
-                textomedi = medis[i].getText();
-                if (textomedi.equals("Formulari web tècnics SSI")) {
-                  item.setServicecallMedium(medis[i]);
-                }
-            }
-            IService servei = null;
-            serWhere.addCriteriumOnName(serveinom);
-            IService serveis[] = ser_hm.findService(serWhere);
-            for (int j=0 ; j<serveis.length ; j++) {
-                servei = serveis[j];
-            }
-            IService serveiamida = servei.getServeiPeticioAmida();
-            IService serveistandard = servei.getServeiPeticioStandard();
-            item.setService(serveiamida);
-            item.setServeiPeticio(servei);
-			 
-            //XDG en el cas d'Impressora l'impacte és baix en la resta l'impacte és mig
-            IClassificationSer clasi = item.getClassification();
-            String clasification = clasi.getText();			 
-            if ( clasification.equals("impressora")) {
-                for (int z=0 ; z<impacts2.length ; z++) {
-                    textoimpacte = impacts2[z].getText();
-                    if (textoimpacte.equals("Baix")) {
-                        item.setImpact(impacts2[z]);
-                    }
-                }
-            }  else {
-                for (int z=0 ; z<impacts2.length ; z++) {
-                    textoimpacte = impacts2[z].getText();
-                    if (textoimpacte.equals("Mig")) {
-                        item.setImpact(impacts2[z]);
-                    }
-                }   
-            }
-            item.save();
-            if (tipopeticion2.equals("Substitució equip actual")) {
-                %>
-                <jsp:forward page="Create2ServiceCall.jsp" >
-                <jsp:param name="vSc" value="<%= sc.oid() %>" />
-                </jsp:forward>
-                <%			 
-            }else{
-                %>
-                <jsp:forward page="ViewEditServiceCall.jsp" >
-                <jsp:param name="vSc" value="<%= sc.oid() %>" />
-                </jsp:forward>
-                <%			 
-            }
-        } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
-        }
 
-        if (errores.equals("si")) {
-         // bean.ot_add(sc);
+            try {
+                sc.save();
+                //XDG
+                Thread.sleep(1000);
+                String loginname = "system";
+                String password = "servicedesk";
+                String servidor = "servicedesk";
+                SdClientBean bean2 = null;
+                try {
+                   bean2 = new SdClientBean(servidor, loginname, password);
+                } catch (Throwable exc) {
+                   bean2 = null;
+                }
+                IServicecall item = null;
+                IServicecallHome scHome = bean2.sd_session().getServicecallHome();
+                item = scHome.openServicecall(sc_oid);
+
+                //XDG Tipus de formulari en historial
+                String asuntolinea = "Formulari";
+                String infoh="Formulari Tècnics Equipament2";	
+                IHistoryLineServicecallHome his_hm = bean2.sd_session().getHistoryLineServicecallHome();
+                IHistoryLineServicecall lineasc = his_hm.openNewHistoryLineServicecall();
+                lineasc.setSubject(asuntolinea);
+                lineasc.setInformation(infoh);
+                item.addHistoryLine(lineasc);
+
+                IMediumHome me_hm = bean2.sd_session().getMediumHome();
+                IMedium medis[] = me_hm.findAllMedium();
+                IServiceHome ser_hm = bean2.sd_session().getServiceHome();
+                IServiceWhere serWhere = ser_hm.createServiceWhere();
+                IImpactHome imp2_hm = bean2.sd_session().getImpactHome();
+                IImpact impacts2[] = imp2_hm.findAllImpact();
+                //String serveinom = "PROVISIÓ-HW";
+                String textomedi = "";
+                String textoimpacte = "";
+                for (int i=0 ; i<medis.length ; i++) {
+                    textomedi = medis[i].getText();
+                    if (textomedi.equals("Formulari web tècnics SSI")) {
+                      item.setServicecallMedium(medis[i]);
+                    }
+                }
+                IService servei = null;
+                serWhere.addCriteriumOnName(serveinom);
+                IService serveis[] = ser_hm.findService(serWhere);
+                for (int j=0 ; j<serveis.length ; j++) {
+                    servei = serveis[j];
+                }
+                IService serveiamida = servei.getServeiPeticioAmida();
+                IService serveistandard = servei.getServeiPeticioStandard();
+                item.setService(serveiamida);
+                item.setServeiPeticio(servei);
+
+                //XDG en el cas d'Impressora l'impacte és baix en la resta l'impacte és mig
+                IClassificationSer clasi = item.getClassification();
+                String clasification = clasi.getText();			 
+                if ( clasification.equals("impressora")) {
+                    for (int z=0 ; z<impacts2.length ; z++) {
+                        textoimpacte = impacts2[z].getText();
+                        if (textoimpacte.equals("Baix")) {
+                            item.setImpact(impacts2[z]);
+                        }
+                    }
+                }  else {
+                    for (int z=0 ; z<impacts2.length ; z++) {
+                        textoimpacte = impacts2[z].getText();
+                        if (textoimpacte.equals("Mig")) {
+                            item.setImpact(impacts2[z]);
+                        }
+                    }   
+                }
+                item.save();
+                if (tipopeticion2.equals("Substitució equip actual")) {
+                    %>
+                    <jsp:forward page="Create2ServiceCall.jsp" >
+                    <jsp:param name="vSc" value="<%= sc.oid() %>" />
+                    </jsp:forward>
+                    <%			 
+                }else{
+                    %>
+                    <jsp:forward page="ViewEditServiceCall.jsp" >
+                    <jsp:param name="vSc" value="<%= sc.oid() %>" />
+                    </jsp:forward>
+                    <%			 
+                }
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        }else{
+            //if (errores.equals("si")) {
+            // bean.ot_add(sc);
             %>
             <jsp:include page="CreateServiceCall.jsp" flush="true">
             <jsp:param name="vSc" value="<%= sc.oid() %>" />
