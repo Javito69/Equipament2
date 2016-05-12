@@ -1105,117 +1105,116 @@ if (_altres.equals("")) {
            }
 			
 			
-           if (errores.equals("no")) {
-                   if (tipopeticion.equals("Altre equipament")){
-                           info = "Equipament....... " + _peti + "\r\n" + "Observacions.... " + _observacions + _Motiusub + _altres + "\r\n";
-                           description = description + " - " + tipusEquipament;
-                   } else {
-                           description = description + " - " + tipusPeticio + tipusEquipament;
-                           //info = info + "\r\n" + "\r\n" + "A OMPLIR PEL TÈCNIC INSTAL·LADOR" + "\r\n" + "\r\n" + "Dades de l'equip instal·lat" + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............." + "\r\n\t" + "Data (dd/mm/aa)...."  + "\r\n" + "\r\n" + "Dades de l'equip retirat (si n'hi ha)"  + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............" + "\r\n" + "\r\n" + "(Un cop feta la instal·lació i consignades les dades, REASSIGNAR" + "\r\n" + "l'entrada de servei a SUPORT USUARI deixant \"A persona\" buit)";
-                           info = info + "\r\n" + "\r\n" + "A OMPLIR PEL TÈCNIC INSTAL·LADOR" + "\r\n" + "\r\n" + "Dades de l'equip instal·lat" + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............." + "\r\n\t" + "Data (dd/mm/aa)...."  + "\r\n" + "\r\n" + "(Un cop feta la instal·lació i consignades les dades, REASSIGNAR" + "\r\n" + "l'entrada de servei a SUPORT USUARI deixant \"A persona\" buit)";
-                   }
-                   if (description != null) {
-                           sc.setDescription(description);
-                   }
-                   sc.setInformation(info);
-           }			
-      
-try {
-sc.save();
-            //XDG
-            Thread.sleep(1000);
-String loginname = "system";
-String password = "servicedesk";
-            //String servidor = "swcs574";
-String servidor = "servicedesk";
-SdClientBean bean2 = null;
-try {
-   bean2 = new SdClientBean(servidor, loginname, password);
-} catch (Throwable exc) {
-   bean2 = null;
-}
-IServicecall item = null;
-IServicecallHome scHome = bean2.sd_session().getServicecallHome();
-item = scHome.openServicecall(sc_oid);
-			 
-            //XDG Tipus de formulari en historial
-           String asuntolinea = "Formulari";
-           String infoh="Formulari Tècnics Equipament2";	
-           IHistoryLineServicecallHome his_hm = bean2.sd_session().getHistoryLineServicecallHome();
-           IHistoryLineServicecall lineasc = his_hm.openNewHistoryLineServicecall();
-           lineasc.setSubject(asuntolinea);
-           lineasc.setInformation(infoh);
-           item.addHistoryLine(lineasc);
-			 
-IMediumHome me_hm = bean2.sd_session().getMediumHome();
-IMedium medis[] = me_hm.findAllMedium();
-IServiceHome ser_hm = bean2.sd_session().getServiceHome();
-IServiceWhere serWhere = ser_hm.createServiceWhere();
-IImpactHome imp2_hm = bean2.sd_session().getImpactHome();
-IImpact impacts2[] = imp2_hm.findAllImpact();
-//String serveinom = "PROVISIÓ-HW";
-String textomedi = "";
-String textoimpacte = "";
-for (int i=0 ; i<medis.length ; i++) {
-   textomedi = medis[i].getText();
-   if (textomedi.equals("Formulari web tècnics SSI")) {
-     item.setServicecallMedium(medis[i]);
-   }
-}
-IService servei = null;
-serWhere.addCriteriumOnName(serveinom);
-IService serveis[] = ser_hm.findService(serWhere);
-for (int j=0 ; j<serveis.length ; j++) {
-   servei = serveis[j];
-}
-IService serveiamida = servei.getServeiPeticioAmida();
-IService serveistandard = servei.getServeiPeticioStandard();
-item.setService(serveiamida);
-item.setServeiPeticio(servei);
-			 
-//XDG en el cas d'Impressora l'impacte és baix en la resta l'impacte és mig
-IClassificationSer clasi = item.getClassification();
-String clasification = clasi.getText();			 
-if ( clasification.equals("impressora")) {
-   for (int z=0 ; z<impacts2.length ; z++) {
-      textoimpacte = impacts2[z].getText();
-      if (textoimpacte.equals("Baix")) {
-         item.setImpact(impacts2[z]);
-      }
-   }
-}  else {
-   for (int z=0 ; z<impacts2.length ; z++) {
-      textoimpacte = impacts2[z].getText();
-      if (textoimpacte.equals("Mig")) {
-         item.setImpact(impacts2[z]);
-      }
-   }
-}
-item.save();
-            if (tipopeticion2.equals("Substitució equip actual")) {
-%>
-<jsp:forward page="Create2ServiceCall.jsp" >
-    <jsp:param name="vSc" value="<%= sc.oid() %>" />
-</jsp:forward>
-<%			 
-}else{
-%>
-<jsp:forward page="ViewEditServiceCall.jsp" >
-    <jsp:param name="vSc" value="<%= sc.oid() %>" />
-</jsp:forward>
-<%			 
-}
-} catch (RuntimeException e) {
-System.out.println(e.getMessage());
-}
+           
+        if (tipopeticion.equals("Altre equipament")){
+                info = "Equipament....... " + _peti + "\r\n" + "Observacions.... " + _observacions + _Motiusub + _altres + "\r\n";
+                description = description + " - " + tipusEquipament;
+        } else {
+                description = description + " - " + tipusPeticio + tipusEquipament;
+                //info = info + "\r\n" + "\r\n" + "A OMPLIR PEL TÈCNIC INSTAL·LADOR" + "\r\n" + "\r\n" + "Dades de l'equip instal·lat" + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............." + "\r\n\t" + "Data (dd/mm/aa)...."  + "\r\n" + "\r\n" + "Dades de l'equip retirat (si n'hi ha)"  + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............" + "\r\n" + "\r\n" + "(Un cop feta la instal·lació i consignades les dades, REASSIGNAR" + "\r\n" + "l'entrada de servei a SUPORT USUARI deixant \"A persona\" buit)";
+                info = info + "\r\n" + "\r\n" + "A OMPLIR PEL TÈCNIC INSTAL·LADOR" + "\r\n" + "\r\n" + "Dades de l'equip instal·lat" + "\r\n\t" + "Marca i model........." + "\r\n\t" + "Nº de sèrie.............." + "\r\n\t" + "Nº Inventari............." + "\r\n\t" + "Data (dd/mm/aa)...."  + "\r\n" + "\r\n" + "(Un cop feta la instal·lació i consignades les dades, REASSIGNAR" + "\r\n" + "l'entrada de servei a SUPORT USUARI deixant \"A persona\" buit)";
+        }
+        if (description != null) {
+                sc.setDescription(description);
+        }
+        sc.setInformation(info);
+      		
+if (errores.equals("no")) { 
+    try {
+        sc.save();
+        //XDG
+        Thread.sleep(1000);
+        String loginname = "system";
+        String password = "servicedesk";
+                    //String servidor = "swcs574";
+        String servidor = "servicedesk";
+        SdClientBean bean2 = null;
+        try {
+           bean2 = new SdClientBean(servidor, loginname, password);
+        } catch (Throwable exc) {
+           bean2 = null;
+        }
+        IServicecall item = null;
+        IServicecallHome scHome = bean2.sd_session().getServicecallHome();
+        item = scHome.openServicecall(sc_oid);
 
-if (errores.equals("si")) {
-// bean.ot_add(sc);
-%>
-<jsp:include page="CreateServiceCall.jsp" flush="true">
-    <jsp:param name="vSc" value="<%= sc.oid() %>" />
-    <jsp:param name="vRetry" value="yes" />
-</jsp:include>
+        //XDG Tipus de formulari en historial
+        String asuntolinea = "Formulari";
+        String infoh="Formulari Tècnics Equipament2";	
+        IHistoryLineServicecallHome his_hm = bean2.sd_session().getHistoryLineServicecallHome();
+        IHistoryLineServicecall lineasc = his_hm.openNewHistoryLineServicecall();
+        lineasc.setSubject(asuntolinea);
+        lineasc.setInformation(infoh);
+        item.addHistoryLine(lineasc);
+
+        IMediumHome me_hm = bean2.sd_session().getMediumHome();
+        IMedium medis[] = me_hm.findAllMedium();
+        IServiceHome ser_hm = bean2.sd_session().getServiceHome();
+        IServiceWhere serWhere = ser_hm.createServiceWhere();
+        IImpactHome imp2_hm = bean2.sd_session().getImpactHome();
+        IImpact impacts2[] = imp2_hm.findAllImpact();
+        //String serveinom = "PROVISIÓ-HW";
+        String textomedi = "";
+        String textoimpacte = "";
+        for (int i=0 ; i<medis.length ; i++) {
+           textomedi = medis[i].getText();
+           if (textomedi.equals("Formulari web tècnics SSI")) {
+             item.setServicecallMedium(medis[i]);
+           }
+        }
+        IService servei = null;
+        serWhere.addCriteriumOnName(serveinom);
+        IService serveis[] = ser_hm.findService(serWhere);
+        for (int j=0 ; j<serveis.length ; j++) {
+           servei = serveis[j];
+        }
+        IService serveiamida = servei.getServeiPeticioAmida();
+        IService serveistandard = servei.getServeiPeticioStandard();
+        item.setService(serveiamida);
+        item.setServeiPeticio(servei);
+
+        //XDG en el cas d'Impressora l'impacte és baix en la resta l'impacte és mig
+        IClassificationSer clasi = item.getClassification();
+        String clasification = clasi.getText();			 
+        if ( clasification.equals("impressora")) {
+           for (int z=0 ; z<impacts2.length ; z++) {
+              textoimpacte = impacts2[z].getText();
+              if (textoimpacte.equals("Baix")) {
+                 item.setImpact(impacts2[z]);
+              }
+           }
+        } else {
+            for (int z=0 ; z<impacts2.length ; z++) {
+               textoimpacte = impacts2[z].getText();
+               if (textoimpacte.equals("Mig")) {
+                  item.setImpact(impacts2[z]);
+               }
+            }
+         }
+        item.save();
+        if (tipopeticion2.equals("Substitució equip actual")) {
+            %>
+            <jsp:forward page="Create2ServiceCall.jsp" >
+                <jsp:param name="vSc" value="<%= sc.oid() %>" />
+            </jsp:forward>
+            <%			 
+        }else{
+            %>
+            <jsp:forward page="ViewEditServiceCall.jsp" >
+                <jsp:param name="vSc" value="<%= sc.oid() %>" />
+            </jsp:forward>
+            <%			 
+        }
+    } catch (RuntimeException e) {
+        System.out.println(e.getMessage());
+    }
+}else{
+    // bean.ot_add(sc);
+    %>
+    <jsp:include page="CreateServiceCall.jsp" flush="true">
+        <jsp:param name="vSc" value="<%= sc.oid() %>" />
+        <jsp:param name="vRetry" value="yes" />
+    </jsp:include>
 <%
 }
 }
