@@ -314,7 +314,7 @@ if (auth.startsWith("NTLM ")) {
 
 %>
           <form name="f" action="CreateServiceCall.jsp?vSc=<%= sc.oid() %>" method="post" target="results">
-          <div class="headline"> <p><b>Petició Equipament informàtic: ordinadors, portàtils i altres perifèrics<b></b></b></p> </div>
+          <div class="headline"> <p><b>Petició Equipament informàtic: ordinadors, impressores i altres perifèrics<b></b></b></p> </div>
             <table border="0" width="50%" >
             <tr>
                 <td>
@@ -334,8 +334,7 @@ if (auth.startsWith("NTLM ")) {
                 <td>
                   <br/>
                   <b>*Destinatari de la petició <b><br>
-                  <!--<INPUT readonly size="40" type="text" name="vCallerPersonName" value="<%= SdClientBean.filter_html_parameter(caller_person != null ? caller_person.getName() : "") %>" > </INPUT>-->
-                  <input readonly size="40" type="text" name="vCallerPersonName" value="" >
+                  <INPUT readonly size="40" type="text" name="vCallerPersonName" value="<%= SdClientBean.filter_html_parameter(caller_person != null ? caller_person.getName() : "") %>" >
                   <input type="hidden" name="vCallerPerson" value="<%= caller_person != null ? caller_person.oid().toString() : "" %>" >
                   <input type="button" name="bcercar" onclick="find_caller('<%= sc.oid() %>', this.form)" value="Cercar" >
                   <input type="hidden" name="vCallerOrganizationName" value="<%= SdClientBean.filter_html_parameter(caller_organization != null ? caller_organization.getName1() : "") %>" >
@@ -355,7 +354,7 @@ if (auth.startsWith("NTLM ")) {
                     <option value="" tipDetall=""></option>
                     <option value="Ordinador sobretaula" tipDetall="Tipus1">Ordinador sobretaula</option>
                     <option value="Ordinador portàtil" tipDetall="Tipus1">Ordinador portàtil</option>
-                    <!--<option value="Impressora" tipDetall="Tipus1">Impressora</option>-->
+                    <option value="Impressora" tipDetall="Tipus1">Impressora</option>
                     <option value="Tablet" tipDetall="Tipus1">Tablet</option>
                     <option value="Altre equipament" tipDetall="Altres">Altre equipament</option>
                 </select>
@@ -369,7 +368,7 @@ if (auth.startsWith("NTLM ")) {
                             <select name="tipus1" onchange="MostraDetall2(this);" class=texto>
                                 <option value="" tipDetall=""></option>
                                 <option value="Retirada equip actual" tipDetall="Observacions">Retirada equip actual</option>
-                                <option value="Substitució equip actual" tipDetall="MotiuSubstitucio">Substitució equip actual</option>
+                                <!--<option value="Substitució equip actual" tipDetall="MotiuSubstitucio">Substitució equip actual</option>-->
                                 <option value="Nou equip" tipDetall="Observacions">Nou equip</option>
                             </select>
                             </b></b>
@@ -902,8 +901,13 @@ e.printStackTrace();
 
 
         // Asignación
+        String tipopeticion = request.getParameter("peticio");
+        String tipopeticion2 = request.getParameter("tipus1");
         String grupo = "SUPORTUSUARI";
         String asignadoa = "";
+        if (tipopeticion.equals("Impressora")) {
+            grupo = "SERVEIIMPRESSIO";
+        }
         IAssignmentHome ass_hm = bean.sd_session().getAssignmentHome();
         IAssignmentEntitlement ass_ent = ass_hm.getAssignmentEntitlement();
         IWorkgroupHome work_hm = bean.sd_session().getWorkgroupHome();
@@ -931,8 +935,6 @@ e.printStackTrace();
 
         //Classificació
         String clasificacion = "";
-        String tipopeticion = request.getParameter("peticio");
-        String tipopeticion2 = request.getParameter("tipus1");
         IClassificationSerHome cla_hm = bean.sd_session().getClassificationSerHome();
         IClassificationSer clasifica[] = cla_hm.findAllClassificationSer();
         SortCode.sortIObject(clasifica);
@@ -1084,7 +1086,7 @@ e.printStackTrace();
 
                 //XDG Tipus de formulari en historial
                 String asuntolinea = "Formulari";
-                String infoh="Formulari Tècnics Equipament2";	
+                String infoh="Formulari Usuaris Equipament";	
                 IHistoryLineServicecallHome his_hm = bean2.sd_session().getHistoryLineServicecallHome();
                 IHistoryLineServicecall lineasc = his_hm.openNewHistoryLineServicecall();
                 lineasc.setSubject(asuntolinea);
